@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { StrategoComponent } from './stratego/stratego.component';
+import { FieldComponent } from './field/field.component';
+import { CellComponent } from './cell/cell.component';
 
 @NgModule({
   declarations: [
-    StrategoComponent
+    StrategoComponent,
+    FieldComponent,
+    CellComponent
   ],
   imports: [
     BrowserModule,
