@@ -4,17 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { StrategoComponent } from './stratego/stratego.component';
+import {WebsocketService} from "./websocket/websocket.service";
+import { CellComponent } from './cell/cell.component';
 
 @NgModule({
   declarations: [
-    StrategoComponent
+    StrategoComponent,
+    CellComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [WebsocketService],
   bootstrap: [StrategoComponent]
 })
 export class AppModule { }

@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<h1>{{title}}</h1>
+  <button (click)="startWebSocket()">Starte Websocket!</button>
+  <button (click)="add()">Add Figure</button>
+  <app-cell [cell]="cellJson"></app-cell>
+  <app-cell></app-cell>
+  <span *ngFor="let cell of field.innerField">
+    <app-cell [cell]="cell"></app-cell>
+  </span>
+<div>
+  {{result}}
+</div>
+
