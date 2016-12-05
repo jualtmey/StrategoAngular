@@ -13,6 +13,10 @@
   filter:grayscale(1) brightness(3.5);
 }
 
+.selected:hover {
+  filter:grayscale(1) brightness(2.5);
+}
+
 .selected {
   filter:grayscale(1) brightness(2.5);
 }

@@ -1,6 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Cell} from "../modules/cell";
-import {WebsocketService} from "../websocket/websocket.service";
 
 @Component({
   selector: 'app-cell',
@@ -9,10 +8,10 @@ import {WebsocketService} from "../websocket/websocket.service";
 })
 export class CellComponent implements OnInit {
   @Input()
-  private cell : Cell = {isPassable: true, character: null, containsCharacter: false, column: 0, row: 0};
+  private cell : Cell;
   private selected : boolean = false;
 
-  constructor(private webSocketService : WebsocketService) { }
+  constructor() { }
 
   onSelect() {
     this.selected === true ? this.selected = false : this.selected = true;
