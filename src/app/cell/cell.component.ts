@@ -31,9 +31,6 @@ export class CellComponent implements OnInit {
   }
 
   ngOnInit() {
-    // TODO wieder einblenden
-    // this.webSocketService.observableCell.subscribe(
-    //   c => this.cell = c);
   }
 
 }

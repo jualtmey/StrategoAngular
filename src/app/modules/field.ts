@@ -1,5 +1,5 @@
-import {Cell} from "./cell";
+import {FieldRow} from "./FieldRow";
 
 export class Field {
-  innerField : Cell[] ;
+  innerField : FieldRow[] ;
 }
