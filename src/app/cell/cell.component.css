@@ -1,0 +1,23 @@
+.cell {
+  font-size: 16px;
+  display: inline-block;
+  width: 10%;
+}
+
+.cell:hover {
+  filter: grayscale(0.5);
+  background-color: rgba(115, 115, 115, 0.3);
+}
+
+.cell:active{
+  filter:grayscale(1) brightness(3.5);
+}
+
+.selected {
+  filter:grayscale(1) brightness(2.5);
+}
+
+.figure {
+  border-radius: 1.0em;
+  width: 100%;
+}
