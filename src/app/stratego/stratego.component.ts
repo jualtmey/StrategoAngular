@@ -18,10 +18,10 @@ export class StrategoComponent implements OnInit {
   }
 
   add(): void {
-    this.webSocketService.add();
+    // this.webSocketService.add(); // TODO test
   }
   ngOnInit() {
-    this.webSocketService.observableField.subscribe(
+    this.webSocketService.observable.subscribe(
       item => {
         if (item != null) {
           this.field = JSON.parse(item).field;

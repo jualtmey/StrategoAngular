@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {SelectCell} from "../modules/select-cell";
+import {InputHandlerService} from "../input-handler/input-handler.service";
 
 @Component({
   selector: 'app-select-cell',
@@ -8,25 +9,18 @@ import {SelectCell} from "../modules/select-cell";
 })
 export class SelectCellComponent implements OnInit {
   @Input()
-  private selectCell : SelectCell;
-  private selected : boolean = false;
+  public selectCell : SelectCell;
+  public selected : boolean = false;
 
-  constructor() { }
+  constructor(private inputHandlerService : InputHandlerService) { }
 
-  onSelect() {
+  private onSelect() {
+    this.inputHandlerService.inputSelect(this);
     this.selected === true ? this.selected = false : this.selected = true;
   }
 
-  whichFigure() : string {
+  private whichFigure() : string {
     return this.selectCell.rank.toString();
-    // if (this.selectCell.containsCharacter) {
-    //   if (this.selectCell.character.isVisible) {
-    //   } else {
-    //     return "notVisible";
-    //   }
-    // } else {
-    //   return "empty";
-    // }
   }
 
   ngOnInit() {

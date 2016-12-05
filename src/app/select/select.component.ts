@@ -13,7 +13,7 @@ export class SelectComponent implements OnInit {
   constructor(private webSocketService : WebsocketService) { }
 
   ngOnInit() {
-    this.webSocketService.observableField.subscribe(
+    this.webSocketService.observable.subscribe(
       item => {
         if (item != null) {
           this.select = JSON.parse(item).select;

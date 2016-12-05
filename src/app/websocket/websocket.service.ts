@@ -9,8 +9,8 @@ export class WebsocketService {
 
   webSocket : WebSocket;
 
-  private behaviorSubjectField = new BehaviorSubject<string>(null);
-  public observableField : Observable<string> = this.behaviorSubjectField.asObservable();
+  private behaviorSubject = new BehaviorSubject<string>(null);
+  public observable : Observable<string> = this.behaviorSubject.asObservable();
 
   public initWebSocket(url : string): void {
     this.webSocket = new WebSocket(url);
@@ -28,10 +28,11 @@ export class WebsocketService {
 
   private onClose(evt) : void {
     alert("DISCONNECTED");
+
   }
 
   private onMessage(evt): void {
-    this.behaviorSubjectField.next(evt.data);
+    this.behaviorSubject.next(evt.data);
   }
 
   private onError(evt): void  {
@@ -56,14 +57,14 @@ export class WebsocketService {
     console.log(this.field.innerField);
   }
   /*---------------------------------------------------------------*/
-  public add() : void {
+  public add(row : number, column : number, rank : number) : void {
     let json = {
       'command': "add",
-      'row': 0,
-      'column': 0,
-      'rank': 1
+      'row': row,
+      'column': column,
+      'rank': rank
     };
-    console.log(json.command);
+    console.log(json.command); // TODO test
     this.webSocket.send(JSON.stringify(json));
   }
 }

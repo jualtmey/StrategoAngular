@@ -8,6 +8,7 @@ import {WebsocketService} from "./websocket/websocket.service";
 import { CellComponent } from './cell/cell.component';
 import { SelectComponent } from './select/select.component';
 import { SelectCellComponent } from './select-cell/select-cell.component';
+import {InputHandlerService} from "./input-handler/input-handler.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { SelectCellComponent } from './select-cell/select-cell.component';
     FormsModule,
     HttpModule
   ],
-  providers: [WebsocketService],
+  providers: [WebsocketService, InputHandlerService],
   bootstrap: [StrategoComponent]
 })
 export class AppModule { }
