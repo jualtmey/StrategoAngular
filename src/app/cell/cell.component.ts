@@ -10,6 +10,11 @@ import {InputHandlerService} from "../input-handler/input-handler.service";
 export class CellComponent implements OnInit {
   @Input()
   public cell : Cell;
+  @Input()
+  public playerOne : string;
+  @Input()
+  public playerTwo : string;
+
   public selected : boolean = false;
 
   constructor(private inputHandlerService : InputHandlerService) { }
@@ -17,6 +22,12 @@ export class CellComponent implements OnInit {
   private onSelect() {
     this.inputHandlerService.inputField(this);
     this.selected === true ? this.selected = false : this.selected = true;
+  }
+
+  private getPlayer() : string {
+    if (this.cell.containsCharacter) {
+      return this.cell.character.player;
+    }
   }
 
   private whichFigure() : string {

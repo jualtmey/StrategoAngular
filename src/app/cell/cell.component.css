@@ -2,6 +2,10 @@
   font-size: 0px;
   display: inline-block;
   width: 8%;
+  border: 1px solid rgba(255, 255, 255, 1.0);
+}
+
+.border {
   border: 1px solid rgba(57,128,57,0.4);
 }
 
@@ -25,4 +29,14 @@
 .figure {
   border-radius: 1.0em;
   width: 100%;
+}
+
+.player1 {
+  background: rgba(255, 33, 45, 0.40);
+  border: 1px solid rgba(139, 5, 5, 0.80);
+}
+
+.player2 {
+  background: rgba(61, 119, 255, 0.4);
+  border: 1px solid rgba(19, 44, 139, 0.8);
 }

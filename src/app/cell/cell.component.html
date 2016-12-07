@@ -1,3 +1,4 @@
-<span class="cell"  (click)="onSelect()" [class.selected]="selected">
+<span class="cell" (click)="onSelect()" [class.selected]="selected" [class.border]="cell.isPassable"
+      [class.player1]="playerOne === getPlayer()" [class.player2]="playerTwo === getPlayer()">
   <img class="figure" src="../../images/figures/{{whichFigure()}}.svg">
 </span>

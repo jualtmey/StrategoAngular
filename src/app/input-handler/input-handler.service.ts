@@ -24,7 +24,7 @@ export class InputHandlerService {
 
   public inputSelect(selectCellComponent: SelectCellComponent): void {
     if (this.lastClickedCell != null) {
-      // remove
+      this.webSocketService.remove(this.lastClickedCell.cell.row, this.lastClickedCell.cell.column);
       this.lastClickedCell = null;
     } else {
       this.lastClickedSelectCell = selectCellComponent;
@@ -40,14 +40,14 @@ export class InputHandlerService {
         cellComponent.selected = false;
         this.lastClickedSelectCell = null;
       } else if (this.lastClickedCell != null) {
-        // swap
+        this.webSocketService.swap(this.lastClickedCell.cell.row, this.lastClickedCell.cell.column,cellComponent.cell.row, cellComponent.cell.column)
         this.lastClickedCell = null;
       } else {
         this.lastClickedCell = cellComponent;
       }
     } else if (this.state === "turn") {
       if (this.lastClickedCell != null) {
-        // move
+        this.webSocketService.move(this.lastClickedCell.cell.row, this.lastClickedCell.cell.column, cellComponent.cell.row, cellComponent.cell.column);
         this.lastClickedCell = null;
       } else {
         this.lastClickedCell = cellComponent;

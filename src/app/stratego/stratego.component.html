@@ -1,8 +1,9 @@
 <button (click)="startWebSocket()">Starte Websocket!</button>
-<button (click)="add()">Add Figure</button>
+<button (click)="finish()">Fertig!</button>
 <app-select></app-select>
 <div class="fieldrow" *ngFor="let fieldRow of field.innerField">
-    <app-cell *ngFor="let cell of fieldRow.cells" [cell]="cell"></app-cell>
+    <app-cell *ngFor="let cell of fieldRow.cells"
+              [cell]="cell" [playerOne]="playerOne" [playerTwo]="playerTwo"></app-cell>
 </div>
 
 <div class="info">
