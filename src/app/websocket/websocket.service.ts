@@ -67,4 +67,47 @@ export class WebsocketService {
     console.log(json.command); // TODO test
     this.webSocket.send(JSON.stringify(json));
   }
+
+  public swap(fromRow : number, fromColumn : number, toRow : number, toColumn : number) : void {
+    let json = {
+      'command': "swap",
+      'fromRow': fromRow,
+      'fromColumn': fromColumn,
+      'toRow': toRow,
+      'toColumn': toColumn
+    };
+    console.log(json.command); // TODO test
+    this.webSocket.send(JSON.stringify(json));
+  }
+
+  public remove(row : number, column : number) : void {
+    let json = {
+      'command': "remove",
+      'row': row,
+      'column': column,
+    };
+    console.log(json.command); // TODO test
+    this.webSocket.send(JSON.stringify(json));
+  }
+
+  public move(fromRow : number, fromColumn : number, toRow : number, toColumn : number) : void {
+    let json = {
+      'command': "move",
+      'fromRow': fromRow,
+      'fromColumn': fromColumn,
+      'toRow': toRow,
+      'toColumn': toColumn
+    };
+    console.log(json.command); // TODO test
+    this.webSocket.send(JSON.stringify(json));
+  }
+
+  public finish() : void {
+    let json = {
+      'command': "finish",
+    };
+    console.log(json.command); // TODO test
+    this.webSocket.send(JSON.stringify(json));
+  }
+
 }
