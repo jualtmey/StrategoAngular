@@ -34,7 +34,6 @@ export class InputHandlerService {
   public inputField(cellComponent : CellComponent) : void {
     if (this.state === "start") {
       if (this.lastClickedSelectCell != null) {
-        console.log(this.state); // TODO test
         this.webSocketService.add(cellComponent.cell.row, cellComponent.cell.column, this.lastClickedSelectCell.selectCell.rank);
         this.lastClickedSelectCell.selected = false;
         cellComponent.selected = false;

@@ -21,7 +21,7 @@ export class WebsocketService {
   }
 
   private onOpen(evt : Event): void {
-    alert("CONNECTED");
+    console.log("CONNECTED");
     let json = {'command': "lobby"};
     this.webSocket.send(JSON.stringify(json));
   }

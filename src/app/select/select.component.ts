@@ -8,7 +8,7 @@ import {Select} from "../modules/select";
   styleUrls: ['./select.component.css']
 })
 export class SelectComponent implements OnInit {
-  private select : Select = {characterList:[{ rank : 11 , player: "PlayerOne"}]};
+  private select : Select = {characterList:[]};
 
   constructor(private webSocketService : WebsocketService) { }
 
